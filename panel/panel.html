@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/panel.css">
+    <script src="../common/jquery-3.2.1.min.js"></script>
+
+
+</head>
+<body>
+  <div>
+    <div class="header">
+      <h2>To Read</h2>
+      <button id="addToRead">Add</button>
+    </div>
+    <div id="toReadDiv" class="taskSection">
+    </div>
+  </div>
+  <div>
+    <div class="header">
+      <h2>To Do</h2>
+      <button id="addToDo">Add</button>
+    </div>
+    <div id="toDoDiv" class="taskSection">
+    </div>
+  </div>
+  <div>
+    <div class="header">
+      <h2>Done</h2>
+      <button id="addDone">Add</button>
+    </div>
+    <div id="doneDiv" class="taskSection">
+    </div>
+  </div>
+  <div id="text"></div>
+</body>
+<script src="js/markdown.js"></script>
+<script src="js/renderData.js"></script>
+</html>

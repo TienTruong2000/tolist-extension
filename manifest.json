@@ -1,0 +1,55 @@
+{
+  "description": "KR On-boarding",
+  "manifest_version": 2,
+  "name": "To do",
+  "version": "0.1",
+  "icons": {
+    "48": "image/note.png",
+    "64": "image/note.png",
+    "128": "image/note.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "contextMenus",
+    "downloads",
+    "webNavigation",
+    "notifications",
+    "http://*/",
+    "https://*/",
+    "storage",
+    "unlimitedStorage",
+    "<all_urls>",
+    "debugger"
+  ],
+  "browser_action": {
+    "default_icon": "image/note.png",
+    "default_title": "Note"
+  },
+
+  "content_scripts": [
+    {
+      "matches":["<all_urls>"],
+      "js": [
+        "common/browser-polyfill.js",
+        "contents/test.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "common/browser-polyfill.js",
+      "backgrounds/background.js",
+      "backgrounds/dataAccess.js"
+    ]
+  },
+  "commands": {
+    "open_panel": {
+      "suggested_key": {
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Open panel"
+    }
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com; object-src 'self'"
+}
